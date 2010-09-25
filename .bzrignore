@@ -1,0 +1,5 @@
+# Rules for Evan's bzr repository of stuff in his home directory.
+#
+# By default, ignore everything. Only track what explicitly gets added
+*
+

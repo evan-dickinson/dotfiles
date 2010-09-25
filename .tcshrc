@@ -1,0 +1,57 @@
+
+#if ( -f /sw/bin/init.csh ) then
+#    source /sw/bin/init.csh
+#endif
+
+setenv PATH "/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+
+# Enable MacPorts
+setenv PATH "/opt/local/bin:/opt/local/sbin:$PATH"
+#setenv MANPATH "/opt/local/share/man:$MANPATH"
+
+# set filename completion
+set filec
+
+# define aliases
+alias h history
+alias ht 'history | tail'
+alias ll ls -l
+
+# Typo aliases
+#
+alias maek make
+alias sl ls
+alias wpd pwd
+
+#
+# Make a dir and cd to it
+alias mkcd 'mkdir \!*; cd \!*'
+
+#
+# ls
+alias ls 'ls -F'
+
+#
+# Emacs-style key bindings
+bindkey -e
+# 4dos-style command history, file completion
+bindkey -k up history-search-backward
+bindkey -k down history-search-forward
+bindkey "^p" history-search-backward
+bindkey "^n" history-search-forward
+
+#bindkey "\t"    complete-word-fwd
+#bindkey ???     complete-word-back
+# ??? what's shift-tab?  I can't find it. :(
+
+# avoid vi if possible
+if ( -f /usr/bin/nano ) then
+    setenv EDIT "/usr/bin/nano -w"
+    setenv EDITOR "/usr/bin/nano -w"
+else if ( -f /usr/bin/pico ) then
+    setenv EDIT "/usr/bin/pico -w"
+    setenv EDITOR "/usr/bin/pico -w"
+else
+    setenv EDIT "/bin/vi"
+    setenv EDITOR "/bin/vi"
+endif
