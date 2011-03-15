@@ -324,3 +324,29 @@ Analagous to suspend-emacs-or-iconify-frame."
 ; Spaces, not tabs
 (setq-default indent-tabs-mode nil)
 
+
+; Use mercurial
+(load "mercurial")
+
+; New function, added by Evan
+(defun hg-ediff ()
+  (interactive)
+  (let* ((buffer-new   (current-buffer) )
+         (buffer-old   (generate-new-buffer "old revision"))
+         (filename     (buffer-file-name buffer-new))
+         (diff-command (concat "hg cat " filename))
+         )
+
+         (shell-command diff-command buffer-old)
+         (ediff-buffers buffer-old buffer-new)
+    )
+  )
+
+; This fixes an incompatiblity in ediff between
+; GNU emacs & xemacs.
+;
+; See http://groups.google.com/group/comp.emacs.xemacs/browse_thread/thread/832455580710d8ae
+(if (featurep 'xemacs) ;; error in ediff-init.el 
+    (eval-after-load "ediff-init" 
+      '(if (equal ediff-coding-system-for-write 'emacs-internal) 
+           (setq ediff-coding-system-for-write 'escape-quoted)))) 
