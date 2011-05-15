@@ -203,7 +203,12 @@
 (setq cperl-invalid-face nil)
 
 ; better buffer switching
-(iswitchb-default-keybindings)
+;
+; GNU Emacs needs to call iswitchb-mode
+; XEmacs needs to call iswitchb-default-keybindings
+(if (functionp 'iswitchb-mode)
+    (iswitchb-mode)
+  (iswitchb-default-keybindings))
 ; Never change the frame with C-x b
 (setq iswitchb-default-method 'samewindow)
 
@@ -215,8 +220,8 @@
 (global-set-key "\M-r" 'isearch-backward-regexp)
 
 ; Match the Windows keystrokes for deleting one word
-(global-set-key '(control backspace) 'backward-kill-word)
-(global-unset-key '(meta backspace)) ; was backward-kill-word
+(global-set-key [(control backspace)] 'backward-kill-word)
+(global-unset-key [(meta backspace)]) ; was backward-kill-word
 
 ; Don't minimize xemacs when it's running non-console
 (defun suspend-emacs-or-do-nothing ()
@@ -269,17 +274,22 @@ Analagous to suspend-emacs-or-iconify-frame."
 
 (defun indent-region-or-line-4 ()
   "Indent the region or line by 4 spaces"
+  ; In xemacs:
   ; the "_" flag to interactive keeps the region selected after
   ; this command finishes.  See documentation for zmacs-region-stays
-  (interactive "_")
+  ;
+  ; In gnu emacs:
+  ; "_" is not supported. Instead, do C-x C-x to re-select the buffer
+  ; See: http://stackoverflow.com/q/1041332
+  ;(interactive "_")
+  (interactive)
   (indent-region-or-line 4)
   )
 
 (defun outdent-region-or-line-4 ()
   "Outdent the region or line by 4 spaces (or indent by -4 spaces)"
-  ; the "_" flag to interactive keeps the region selected after
-  ; this command finishes.  See documentation for zmacs-region-stays
-  (interactive "_")
+  ; See above for discussion of interactive
+  (interactive)
   (indent-region-or-line -4)
   )
 
@@ -326,7 +336,12 @@ Analagous to suspend-emacs-or-iconify-frame."
 
 
 ; Use mercurial
-(load "mercurial")
+(if (featurep 'xemacs)
+    (load "mercurial") ;xemacs
+  (load "vc-hg")) ;gnu emacs
+
+; Instead of hg-ediff, I should be able to do the following:
+; http://stackoverflow.com/questions/3712834/getting-vc-diff-to-use-ediff-in-emacs-23-2
 
 ; New function, added by Evan
 (defun hg-ediff ()
