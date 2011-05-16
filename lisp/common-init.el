@@ -365,3 +365,16 @@ Analagous to suspend-emacs-or-iconify-frame."
     (eval-after-load "ediff-init" 
       '(if (equal ediff-coding-system-for-write 'emacs-internal) 
            (setq ediff-coding-system-for-write 'escape-quoted)))) 
+
+
+; Turn on PHP mode in emacs. It comes bundled in xemacs.
+(when (not (featurep 'xemacs))
+    (require 'php-mode))
+
+; Parens
+(show-paren-mode t)
+
+; C-x v = does ediff
+; http://stackoverflow.com/questions/3712834/getting-vc-diff-to-use-ediff-in-emacs-23-2
+(eval-after-load "vc-hooks"
+         '(define-key vc-prefix-map "=" 'ediff-revision))
