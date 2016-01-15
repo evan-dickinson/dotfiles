@@ -39,6 +39,14 @@ else
     export EDITOR="/bin/vi"
 fi
 
+# Search history with up and down keys
+# http://unix.stackexchange.com/a/97844
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+bindkey -M emacs '^P' history-beginning-search-backward
+bindkey -M emacs '^N' history-beginning-search-forward
+
 
 # MacPorts Installer addition on 2016-01-14_at_16:38:19: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
