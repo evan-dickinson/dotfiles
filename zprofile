@@ -24,6 +24,9 @@ mkcd() {
 # ls
 alias ls='ls -F'
 
+# Prompt
+export PROMPT='%n:%3C %# '
+
 # avoid vi if possible
 if [ -f /usr/bin/nano ]; then
     export EDIT="/usr/bin/nano -w"
