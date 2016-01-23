@@ -1,0 +1,10 @@
+
+# For keeping package control in sync, the docs recommend not syncing these
+# files. https://packagecontrol.io/docs/syncing
+sublime-packages-user/Package Control.last-run
+sublime-packages-user/Package Control.ca-list
+sublime-packages-user/Package Control.ca-bundle
+sublime-packages-user/Package Control.system-ca-bundle
+sublime-packages-user/Package Control.cache/
+sublime-packages-user/Package Control.ca-certs/
+
