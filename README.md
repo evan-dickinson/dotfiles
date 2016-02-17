@@ -21,3 +21,5 @@ Package Control will automatically install any missing packages.
 First, install Sublime Text and [Package Control](https://packagecontrol.io/installation#st2)
 
 % ln -s ~/Apps/dotfiles/sublime-packages-user ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
+% ln -s ~/Apps/dotfiles/sublime-3-packages-user ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+
