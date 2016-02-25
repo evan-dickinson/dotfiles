@@ -5,8 +5,11 @@
 	],
 	"installed_packages":
 	[
+		"Diffy",
 		"EditorConfig",
+		"FileDiffs",
 		"Package Control",
+		"SCSS",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint"
 	]

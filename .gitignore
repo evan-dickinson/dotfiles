@@ -16,3 +16,5 @@ sublime-3-packages-user/Package Control.system-ca-bundle
 sublime-3-packages-user/Package Control.cache/
 sublime-3-packages-user/Package Control.ca-certs/
 
+.DS_Store
+

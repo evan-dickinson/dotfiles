@@ -1,4 +1,9 @@
 {
+	"binary_file_patterns":
+	[
+		"*.min.js",
+		"*.min.css"
+	],
 	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"ignored_packages":
 	[
