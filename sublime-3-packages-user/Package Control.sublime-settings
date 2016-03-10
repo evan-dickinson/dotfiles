@@ -8,6 +8,8 @@
 		"Diffy",
 		"EditorConfig",
 		"FileDiffs",
+		"JsFormat",
+		"LESS",
 		"Package Control",
 		"SCSS",
 		"SublimeLinter",
