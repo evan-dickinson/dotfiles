@@ -5,13 +5,19 @@
 	],
 	"installed_packages":
 	[
+		"AlignTab",
 		"Diffy",
 		"EditorConfig",
 		"FileDiffs",
+		"HexViewer",
+		"Hjson",
 		"JsFormat",
 		"LESS",
+		"MarkdownEditing",
 		"Package Control",
+		"Pretty JSON",
 		"SCSS",
+		"SublimeGit",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint"
 	]
