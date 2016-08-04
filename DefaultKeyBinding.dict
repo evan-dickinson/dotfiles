@@ -1,0 +1,79 @@
+/* ~/Library/KeyBindings/DefaultKeyBinding.dict */
+
+/* For more info: http://www.erasetotheleft.com/post/mac-os-x-key-bindings/ */
+
+/* The original bindings are from Mike Ferris of lorax.com as shipped
+ * with his TextExtras package.  They were further modified by Mishka Gorodnitzky
+ * (misaka@pobox.com), Patrick Linskey, and Llew Mason.
+ */
+
+ /*
+  * ^ = ctrl
+  * ~ = option (meta)
+  * @ = cmd
+  * $ = shift
+  * # = numeric keypad
+  */
+{
+    "~f"      = "moveWordForward:";             /* M-f */
+    "~b"      = "moveWordBackward:";            /* M-b */
+    /* "~<"      = "moveToBeginningOfDocument:"; */    /* M-< */
+    /* "~>"      = "moveToEndOfDocument:"; */          /* M-> */
+    "~v"      = "pageUp:";                       /* M-v */
+    "^v"      = "pageDown:";                     /* C-v */
+    "~d"      = "deleteWordForward:";            /* M-d */
+    /* "~^h"     = "deleteWordBackward:"; */           /* M-C-h */
+    /* "~\010"   = "deleteWordBackward:"; */           /* M-backspace */
+
+     "^\177" = "deleteWordBackward:";
+    "\UF729"  = "moveToBeginningOfDocument:";    /* home */
+    "\UF72B"  = "moveToEndOfDocument:";          /* end */
+    /* "@\UF729" = "moveToBeginningOfParagraph:"; */   /* A-home */
+    /* "@\UF72B" = "moveToEndOfParagraph:"; */        /* A-end */
+    /* "@\UF700" = "moveToBeginningOfDocument:"; */    /* A-up */
+    /* "@\UF701" = "moveToEndOfDocument:"; */         /* A-down */
+
+    /* Don't bind page-up and page-down keys: they mess up
+     * Safari.
+     */
+
+    "^/"      = "undo:";                         /* C-/ */
+    /* "~c"      = "capitalizeWord:"; */               /* M-c */
+    /* "~u"      = "uppercaseWord:"; */                /* M-u */
+    /* "~l"      = "lowercaseWord:"; */               /* M-l */
+    "^t"      = "transpose:";                    /* C-t */
+    /* "~t"      = "transposeWords:"; */               /* M-t */
+    "~/"      = "complete:";                     /* M-/ */
+    /* "^g"      = "_cancelKey:"; */                  /* C-g */
+    "^a"      = "moveToBeginningOfLine:";        /* C-a */
+    "^e"      = "moveToEndOfLine:";              /* C-e */
+
+    "^x" = {
+        "^x"  = "swapWithMark:";                 /* C-x C-x */
+        "^m"  = "selectToMark:";                 /* C-x C-m */
+		/* @@@ doesn't work */
+        "^s"  = "saveDocument:";                   /* C-x C-s */
+        /* @@@ doesn't work - should it be saveDocumentTo:? */
+        "^w"  = "saveDocumentAs:";                       /* C-x C-w */
+        "k"   = "performClose:";                 /* C-x C-k */
+        /* @@@ evan made this up */
+        "^f"  = "openDocument:";                         /* C-x C-f */
+        "^c"   = "terminate:";                         /* C-x C-c */
+    };
+
+    /* Mark-point stuff (Emacs-style mark and point bindings are
+     * implemented but not bound by default.  In the text system the
+     * mark and point are ranges, not just locations.  The "point" is
+     * the selected range.)
+     */
+    /* "^@" = "setMark:"; */                          /* C-@ */
+    "^ " = "setMark:";                           /* C-space */
+    "^w" = "deleteToMark:";                      /* C-w */
+
+    /* Mac Style F1-F5 bindings */
+    /* "\UF704" = "undo:"; */                          /* F1 */
+    /* "\UF705" = "cut:"; */                          /* F2 */
+    /* "\UF706" = "copy:"; */                         /* F3 */
+    /* "\UF707" = "paste:"; */                        /* F4 */
+    /* "\UF708" = "_cancelKey:"; */                   /* F5 */
+}
