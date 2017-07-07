@@ -52,3 +52,7 @@ bindkey -M emacs '^N' history-beginning-search-forward
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+# Mercury
+if [ -d $HOME/Apps/mercury-14.01.1/bin ]; then
+    export PATH="$PATH:$HOME/Apps/mercury-14.01.1/bin"
+fi
