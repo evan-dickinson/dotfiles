@@ -1,0 +1,18 @@
+#! /bin/zsh
+
+set -e
+
+# The pin commands get in the way of Emacs key bindings. I couldn't come up with anything better, so I'm just removing
+# the bindings for now.
+defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Pin Top' -string 'INVALID'
+defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Pin Bottom' -string 'INVALID'
+defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Pin Right' -string 'INVALID'
+defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Pin Left' -string 'INVALID'
+defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Fix Width' -string 'INVALID'
+defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Fix Height' -string 'INVALID'
+
+
+
+# Free up ^p for previous-line
+defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Show Pixels on Zoom' -string '^$p'
+

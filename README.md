@@ -15,10 +15,11 @@ Create symlink
 
 ### Install for Sublime Text
 
-See the [notes for keeping items in sync](https://packagecontrol.io/docs/syncing). At startup of Sublime Text,
-Package Control will automatically install any missing packages.
+See the [notes for keeping items in sync](https://packagecontrol.io/docs/syncing). At startup of Sublime Text, Package Control will automatically install any missing packages.
 
-First, install Sublime Text and [Package Control](https://packagecontrol.io/installation#st2)
+First, install Sublime Text and [Package Control](https://packagecontrol.io/installation#st2). 
+
+Are you behind a proxy? Set the [proxy settings](https://packagecontrol.io/docs/settings).
 
 % ln -s ~/Apps/dotfiles/sublime-packages-user ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
 % ln -s ~/Apps/dotfiles/sublime-3-packages-user ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User

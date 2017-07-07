@@ -1,5 +1,6 @@
 {
 	"bootstrapped": true,
+	"debug": true,
 	"in_process_packages":
 	[
 	],
