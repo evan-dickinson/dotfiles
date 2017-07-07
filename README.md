@@ -9,9 +9,18 @@ Create symlink
 % cd ~
 % ln -s ~/Apps/dotfiles/zprofile .zprofile
 
-
 * Create a symlink from ~/.profile to profile
-* TODO: Create other symlinks, too, if I ever start using emacs again
+
+
+### Install for Emacs
+% cd ~
+% ln -s ~/Apps/dotfiles/emacs.d .emacs.d
+
+### Update Mac app key bindings
+Install Sketch (and any other apps that need bindings)
+
+% ./setup-app-keybindings
+
 
 ### Install for Sublime Text
 
