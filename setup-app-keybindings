@@ -11,8 +11,11 @@ defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add '
 defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Fix Width' -string 'INVALID'
 defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Fix Height' -string 'INVALID'
 
-
-
 # Free up ^p for previous-line
 defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Show Pixels on Zoom' -string '^$p'
+
+# Craft sets up some annoying key bindings
+defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Add Hotspot to Layer' -string 'INVALID'
+defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Toggle View Hotspots' -string 'INVALID'
+
 
