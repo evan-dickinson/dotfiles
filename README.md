@@ -32,3 +32,5 @@ Are you behind a proxy? Set the [proxy settings](https://packagecontrol.io/docs/
 
 % ln -s ~/Apps/dotfiles/sublime-packages-user ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
 % ln -s ~/Apps/dotfiles/sublime-3-packages-user ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+% mkdir ~/bin
+% ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/sublime

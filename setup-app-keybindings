@@ -2,6 +2,13 @@
 
 set -e
 
+# http://hints.macworld.com/article.php?story=20131123074223584
+# @ for Command, $ for Shift, ~ for Alt and ^ for Ctrl
+
+###############################################################################
+#
+# Sketch
+
 # The pin commands get in the way of Emacs key bindings. I couldn't come up with anything better, so I'm just removing
 # the bindings for now.
 defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Pin Top' -string 'INVALID'
@@ -14,8 +21,17 @@ defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add '
 # Free up ^p for previous-line
 defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Show Pixels on Zoom' -string '^$p'
 
+# Free up shift command V for PasteBot
+defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Paste over Selection' -string '^@v'
+
 # Craft sets up some annoying key bindings
 defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Add Hotspot to Layer' -string 'INVALID'
 defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Toggle View Hotspots' -string 'INVALID'
 
 
+###############################################################################
+#
+# Affinity Photo
+
+# Wasn't able to get this to take from the command line. It only seems to work via the UI in System Preferences
+#defaults write com.seriflabs.affinityphoto.plist NSUserKeyEquivalents -dict-add 'Convert To Curves' -string '@~$9'
