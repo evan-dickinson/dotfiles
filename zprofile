@@ -56,3 +56,8 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 if [ -d $HOME/Apps/mercury-14.01.1/bin ]; then
     export PATH="$PATH:$HOME/Apps/mercury-14.01.1/bin"
 fi
+
+# ~/bin
+if [ -d $HOME/bin ]; then
+    export PATH="$PATH:$HOME/bin"
+fi
