@@ -17,6 +17,7 @@ defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add '
 defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Pin Left' -string 'INVALID'
 defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Fix Width' -string 'INVALID'
 defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Fix Height' -string 'INVALID'
+defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Show Slices' -string 'INVALID'
 
 # Free up ^p for previous-line
 defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add 'Show Pixels on Zoom' -string '^$p'
@@ -35,3 +36,8 @@ defaults write com.bohemiancoding.sketch3.plist NSUserKeyEquivalents -dict-add '
 
 # Wasn't able to get this to take from the command line. It only seems to work via the UI in System Preferences
 #defaults write com.seriflabs.affinityphoto.plist NSUserKeyEquivalents -dict-add 'Convert To Curves' -string '@~$9'
+
+###############################################################################
+#
+# Notes
+defaults write com.apple.Notes.plist NSUserKeyEquivalents -dict-add 'Bulleted List' -string '$@u'

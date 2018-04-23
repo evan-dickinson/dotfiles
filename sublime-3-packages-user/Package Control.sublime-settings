@@ -21,6 +21,6 @@
 		"SCSS",
 		"SublimeGit",
 		"SublimeLinter",
-		"SublimeLinter-contrib-eslint"
+		"SublimeLinter-eslint"
 	]
 }

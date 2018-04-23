@@ -61,3 +61,21 @@ fi
 if [ -d $HOME/bin ]; then
     export PATH="$PATH:$HOME/bin"
 fi
+
+# sketchtool
+if [ -d /Applications/Sketch.app/Contents/Resources/sketchtool/bin ]; then
+    export PATH="$PATH:/Applications/Sketch.app/Contents/Resources/sketchtool/bin"
+fi
+
+# Perl / CPAN stuff
+if [[ -d /Users/sesa382347/ ]]; then
+	PATH="/Users/sesa382347/perl5/bin${PATH:+:${PATH}}"; export PATH;
+	PERL5LIB="/Users/sesa382347/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+	PERL_LOCAL_LIB_ROOT="/Users/sesa382347/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+	PERL_MB_OPT="--install_base \"/Users/sesa382347/perl5\""; export PERL_MB_OPT;
+	PERL_MM_OPT="INSTALL_BASE=/Users/sesa382347/perl5"; export PERL_MM_OPT;
+fi
+
+
+
+
