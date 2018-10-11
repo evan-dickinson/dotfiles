@@ -77,5 +77,5 @@ if [[ -d /Users/sesa382347/ ]]; then
 fi
 
 
-
+export HISTSIZE=1000
 
