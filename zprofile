@@ -6,9 +6,9 @@
 alias h=history
 alias ht='history | tail'
 alias ll='ls -l'
+export HISTSIZE=1000
 
 # Typo aliases
-#
 alias maek=make
 alias sl=ls
 alias wpd=pwd
@@ -20,7 +20,6 @@ mkcd() {
     cd $1
 }
 
-#
 # ls
 alias ls='ls -F'
 
@@ -76,8 +75,13 @@ if [[ -d /Users/sesa382347/ ]]; then
 	PERL_MM_OPT="INSTALL_BASE=/Users/sesa382347/perl5"; export PERL_MM_OPT;
 fi
 
+# Cargo
+if [ -d $HOME/.cargo/bin ]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
 
-export HISTSIZE=1000
-
-
-export PATH="$HOME/.cargo/bin:$PATH"
+# If openssl is installed via MacPorts, set OPENSSL_DIR. 
+# This was needed to get some rust crates to compile.
+if [ -f /opt/local/bin/openssl ]; then
+    export OPENSSL_DIR=/opt/local
+fi    
