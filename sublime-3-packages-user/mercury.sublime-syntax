@@ -1,0 +1,71 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions:
+  - [aardvark, m]
+scope: source.mercury
+
+contexts:
+  # The prototype context is prepended to all contexts but those setting
+  # meta_include_prototype: false.
+  prototype:
+    - include: comments
+
+  main:
+    # The main context is the initial starting point of our syntax.
+    # Include other contexts from here (or specify them directly).
+    - include: keywords
+    - include: numbers
+    - include: strings
+    # Make this work later
+    #- match: ':-'
+    #  push: pragma
+
+  keywords:
+    # Keywords are if, else for and while.
+    # Note that blackslashes don't need to be escaped within single quoted
+    # strings in YAML. When using single quoted strings, only single quotes
+    # need to be escaped: this is done by using two single quotes next to each
+    # other.
+    - match: '\b(if|then|else)\b'
+      scope: keyword.control.mercury
+
+  numbers:
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.mercury
+
+  strings:
+    # Strings begin and end with quotes, and use backslashes as an escape
+    # character.
+    - match: '"'
+      scope: punctuation.definition.string.begin.mercury
+      push: inside_string
+
+  inside_string:
+    - meta_include_prototype: false
+    - meta_scope: string.quoted.double.mercury
+    - match: '\\.'
+      scope: constant.character.escape.mercury
+    - match: '"'
+      scope: punctuation.definition.string.end.mercury
+      pop: true
+
+  comments:
+    # Comments begin with a '%' and finish at the end of the line.
+    - match: '%'
+      scope: punctuation.definition.comment.mercury
+      push:
+        # This is an anonymous context push for brevity.
+        - meta_scope: comment.line.double-slash.mercury
+        - match: $\n?
+          pop: true
+
+  pragma:
+    #- meta_scope: constant.numeric.mercury
+    - match: '\b(module|import_module|type|func|pred|mode|implementation)\b'
+      scope: keyword.control.mercury
+    - match: '\.'
+      pop: true
+
+
+
