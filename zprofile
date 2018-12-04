@@ -79,3 +79,5 @@ fi
 
 export HISTSIZE=1000
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
