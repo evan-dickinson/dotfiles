@@ -85,3 +85,5 @@ fi
 if [ -f /opt/local/bin/openssl ]; then
     export OPENSSL_DIR=/opt/local
 fi    
+
+export PATH="$HOME/.cargo/bin:$PATH"

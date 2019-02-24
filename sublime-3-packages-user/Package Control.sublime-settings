@@ -13,6 +13,7 @@
 		"FileDiffs",
 		"HexViewer",
 		"Hjson",
+		"Jade",
 		"JsFormat",
 		"LESS",
 		"MarkdownEditing",
@@ -22,6 +23,7 @@
 		"SCSS",
 		"SublimeGit",
 		"SublimeLinter",
-		"SublimeLinter-eslint"
+		"SublimeLinter-eslint",
+		"TOML"
 	]
 }
