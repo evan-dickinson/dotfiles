@@ -6,7 +6,8 @@
 alias h=history
 alias ht='history | tail'
 alias ll='ls -l'
-export HISTSIZE=1000
+export HISTSIZE=1000      # Old. Maybe it's for bash?
+export SAVEHIST=$HISTSIZE # zsh
 
 # Typo aliases
 alias maek=make
@@ -86,4 +87,17 @@ if [ -f /opt/local/bin/openssl ]; then
     export OPENSSL_DIR=/opt/local
 fi    
 
-export PATH="$HOME/.cargo/bin:$PATH"
+if [ -d /usr/local/opt/postgresql@9.6/bin ]; then
+  export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+fi
+
+alias phpmamp='/Applications/MAMP/bin/php/php7.3.1/bin/php'
+alias composer='phpmamp /Applications/MAMP/bin/php/php7.3.1/bin/composer.phar'
+export PATH="/Applications/MAMP/bin/php/php7.3.1/bin:$PATH"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/evan-work/Apps/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/evan-work/Apps/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/evan-work/Apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/evan-work/Apps/google-cloud-sdk/completion.zsh.inc'; fi
