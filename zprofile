@@ -101,3 +101,28 @@ if [ -f '/Users/evan-work/Apps/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/evan-work/Apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/evan-work/Apps/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Homebrew python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# Something for mono
+export PATH="/Library/Frameworks/Mono.framework/Versions/Current/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm  
+
+# alias kgp='kubectl get pods'
+kgp() {
+    OUT=`kubectl get pods`
+    echo "$OUT"
+
+    if [[ -n "$1" ]]; then
+	REGEX="^$1"
+	POD_ID=`echo "$OUT" | grep Running | grep -E $REGEX | cut -f 1 -d ' '`
+	echo "Found ID: $POD_ID"
+	/bin/echo -n "$POD_ID" | pbcopy
+    fi
+}
+
+
+alias klf='kubectl logs -f'
